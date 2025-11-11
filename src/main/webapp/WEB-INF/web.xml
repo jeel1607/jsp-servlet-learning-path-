@@ -13,6 +13,18 @@
         <servlet-name>AddServlet</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>SQServlet</servlet-name>
+        <servlet-class>com.jeelsoft.SqServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SQServlet</servlet-name>
+        <url-pattern>/sq</url-pattern>
+    </servlet-mapping>
+
+   
 
    
 

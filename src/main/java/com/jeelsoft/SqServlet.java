@@ -7,13 +7,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class SqServlet extends HttpServlet{
+public class SqServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PrintWriter out=resp.getWriter();
-		out.println("Hello to  sqee");
+		HttpSession session = req.getSession();
+		int k = (int) session.getAttribute("k");
+		PrintWriter out = resp.getWriter();
+		out.println("Result is :" + k);
 	}
-    
+
 }
