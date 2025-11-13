@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-//@WebServlet("/add")
+@WebServlet("/add")
 public class AddServlet extends HttpServlet {
 
 	@Override
@@ -18,9 +18,15 @@ public class AddServlet extends HttpServlet {
 		int j = Integer.parseInt(req.getParameter("num2"));
 
 		int k = i + j;
-		HttpSession session = req.getSession();
-		session.setAttribute("k", k);
+//		HttpSession session = req.getSession();
+//		session.setAttribute("k", k);
+//	    res.sendRedirect("sq");
+		
+		
+		Cookie cookie=new Cookie("k",k+"");
+		res.addCookie(cookie);
 		res.sendRedirect("sq");
+	
 
 //		 req.setAttribute("k",k);		 
 //	 RequestDispatcher rd=req.getRequestDispatcher("sq");
@@ -35,3 +41,4 @@ public class AddServlet extends HttpServlet {
 //	}
 
 }
+
